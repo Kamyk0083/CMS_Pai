@@ -1,23 +1,29 @@
-import './Slider.scss';
+import "./Slider.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from "react-responsive-carousel";
+import { useContext } from "react";
+import { AppContext } from "../../context/app.context";
 
 const Slider = () => {
-    return(
-        <div className="slider-container container">
-            <Carousel>
-                <div className="slide slide-1">
-                    <p className="legend">Slide 1</p>
-                </div>
-                <div className="slide slide-2">
-                    <p className="legend">Slide 2</p>
-                </div>
-                <div className="slide slide-3">
-                    <p className="legend">Slide 3</p>
-                </div>
-            </Carousel>
+  const { sliderImg } = useContext(AppContext);
+  return (
+    <div className="slider-container container">
+      <Carousel>
+        <div className="slide slide-1">
+          <img src={sliderImg[1]} alt="" />
+          <p className="legend">Slide 1</p>
         </div>
-    )
-}
+        <div className="slide slide-2">
+          <img src={sliderImg[2]} alt="" />
+          <p className="legend">Slide 2</p>
+        </div>
+        <div className="slide slide-3">
+          <img src={sliderImg[3]} alt="" />
+          <p className="legend">Slide 3</p>
+        </div>
+      </Carousel>
+    </div>
+  );
+};
 
 export default Slider;
