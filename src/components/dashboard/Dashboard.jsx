@@ -92,6 +92,17 @@ const Dashboard = () => {
               />
             </div>
           </div>
+          <div className="courses-order">
+            <p>Courses Order</p>
+            <div className="courses-inputs">
+              <p>1</p>
+              <input type="number" min={1} max={3} />
+              <p>2</p>
+              <input type="number" min={1} max={3} />
+              <p>3</p>
+              <input type="number" min={1} max={3} />
+            </div>
+          </div>
         </div>
         <div className="settings"></div>
       </div>

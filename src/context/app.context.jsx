@@ -15,6 +15,11 @@ export const AppContextProvider = ({ children }) => {
     2: "#808080",
     3: "#808080",
   });
+  const [coursesOrder, setCoursesOrder] = useState({
+    1: "1",
+    2: "2",
+    3: "3",
+  });
 
   return (
     <AppContext.Provider
@@ -27,6 +32,8 @@ export const AppContextProvider = ({ children }) => {
         setSliderImg,
         boxColor,
         setBoxColor,
+        coursesOrder,
+        setCoursesOrder,
       }}
     >
       {children}
