@@ -7,7 +7,7 @@ const Courses = () => {
   return (
     <div id="courses" className="container">
       <div className="courses">
-        <div className="course">
+        <div className="course" style={{}}>
           <h2>Kurs HTML</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam id
