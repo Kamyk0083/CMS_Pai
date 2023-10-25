@@ -2,12 +2,15 @@
 @import "./../../mixins.scss";
 
 .courses {
+  display: flex;
+  flex-direction: column;
+
   @include tablet {
-    display: flex;
-    flex-direction: column;
   }
 
   .course {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 
     h2 {

@@ -5,8 +5,18 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 const Dashboard = () => {
-  const { slider, setSlider, sliderImg, setSliderImg, boxColor, setBoxColor } =
-    useContext(AppContext);
+  const {
+    slider,
+    setSlider,
+    sliderImg,
+    setSliderImg,
+    boxColor,
+    setBoxColor,
+    courseOrder,
+    setCourseOrder,
+    footerText,
+    setFooterText,
+  } = useContext(AppContext);
 
   const setSliderImgHanlder = (e) => {
     const sliderNumber = Number(e.target.name);
@@ -26,6 +36,24 @@ const Dashboard = () => {
     setBoxColor(boxColor);
   };
 
+  const setCourseOrderHandler = (e) => {
+    const courseNumber = Number(e.target.name);
+    const courseNumberValue = e.target.value;
+
+    courseOrder[courseNumber] = courseNumberValue;
+    console.log(courseOrder);
+
+    setCourseOrder(courseOrder);
+  };
+
+  const setFooterTextHandler = (e) => {
+    const footerNumber = Number(e.target.name);
+    const footerNumberValue = e.target.value;
+
+    footerText[footerNumber] = footerNumberValue;
+
+    setFooterText(footerText);
+  };
   return (
     <div className="dashboard-container">
       <div className="show-home-btn">
@@ -93,14 +121,54 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="courses-order">
-            <p>Courses Order</p>
+            <h2>Courses Order</h2>
             <div className="courses-inputs">
               <p>1</p>
-              <input type="number" min={1} max={3} />
+              <input
+                onChange={(e) => setCourseOrderHandler(e)}
+                defaultValue={courseOrder[1]}
+                type="number"
+                min={1}
+                max={3}
+                name="1"
+              />
               <p>2</p>
-              <input type="number" min={1} max={3} />
+              <input
+                onChange={(e) => setCourseOrderHandler(e)}
+                defaultValue={courseOrder[2]}
+                type="number"
+                min={1}
+                max={3}
+                name="2"
+              />
               <p>3</p>
-              <input type="number" min={1} max={3} />
+              <input
+                onChange={(e) => setCourseOrderHandler(e)}
+                defaultValue={courseOrder[3]}
+                type="number"
+                min={1}
+                max={3}
+                name="3"
+              />
+            </div>
+          </div>
+          <div className="footer-text">
+            <h2>Footer text</h2>
+            <div className="footer-inputs">
+              <p>1</p>
+              <input
+                onChange={(e) => setFooterTextHandler(e)}
+                defaultValue={footerText[1]}
+                type="text"
+                name="1"
+              />
+              <p>2</p>
+              <input
+                onChange={(e) => setFooterTextHandler(e)}
+                defaultValue={footerText[2]}
+                type="text"
+                name="2"
+              />
             </div>
           </div>
         </div>

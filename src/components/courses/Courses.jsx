@@ -3,12 +3,12 @@ import "./Courses.scss";
 import { useContext } from "react";
 
 const Courses = () => {
-  const { coursesOrder } = useContext(AppContext);
+  const { courseOrder } = useContext(AppContext);
   return (
     <div id="courses" className="container">
       <div className="courses">
-        <div className="course" style={{}}>
-          <h2>Kurs HTML</h2>
+        <div className="course" style={{ order: courseOrder[1] }}>
+          <h2>Kurs HTML {courseOrder[1]}</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam id
             suscipit unde magni alias dolorem iure sapiente nostrum. Ab dolores
@@ -16,8 +16,8 @@ const Courses = () => {
             eaque.
           </p>
         </div>
-        <div className="course">
-          <h2>Kurs CSS</h2>
+        <div className="course" style={{ order: courseOrder[2] }}>
+          <h2>Kurs CSS {courseOrder[2]}</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam id
             suscipit unde magni alias dolorem iure sapiente nostrum. Ab dolores
@@ -25,8 +25,8 @@ const Courses = () => {
             eaque.
           </p>
         </div>
-        <div className="course">
-          <h2>Kurs JavaScript</h2>
+        <div className="course" style={{ order: courseOrder[3] }}>
+          <h2>Kurs JavaScript {courseOrder[3]}</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam id
             suscipit unde magni alias dolorem iure sapiente nostrum. Ab dolores

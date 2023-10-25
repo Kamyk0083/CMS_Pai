@@ -15,10 +15,14 @@ export const AppContextProvider = ({ children }) => {
     2: "#808080",
     3: "#808080",
   });
-  const [coursesOrder, setCoursesOrder] = useState({
+  const [courseOrder, setCourseOrder] = useState({
     1: "1",
     2: "2",
     3: "3",
+  });
+  const [footerText, setFooterText] = useState({
+    1: "Made by ",
+    2: "#TechniSchools",
   });
 
   return (
@@ -32,8 +36,10 @@ export const AppContextProvider = ({ children }) => {
         setSliderImg,
         boxColor,
         setBoxColor,
-        coursesOrder,
-        setCoursesOrder,
+        courseOrder,
+        setCourseOrder,
+        footerText,
+        setFooterText,
       }}
     >
       {children}
