@@ -22,7 +22,7 @@ export const AppContextProvider = ({ children }) => {
   });
   const [footerText, setFooterText] = useState({
     1: "Made by ",
-    2: "#TechniSchools",
+    2: "#Ksawery",
   });
 
   return (

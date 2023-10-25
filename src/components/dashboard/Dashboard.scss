@@ -2,96 +2,128 @@
 @import "./../../mixins.scss";
 
 .dashboard-container {
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   background: $white;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+  margin: 2em auto;
+  padding: 2em;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 
   .show-home-btn {
-    text-align: right;
-    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
 
     a {
-      color: $black;
+      display: inline-block;
+      padding: 0.5em 1em;
+      color: $white;
+      background-color: $btn;
+      border-radius: 4px;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s ease;
+      transition: all 0.3s;
+      transform: translateY(0);
 
       &:hover {
-        color: $greyLight;
+        background-color: $btnHover;
+        transform: translateY(-3px);
       }
     }
   }
 
   .section-settings {
-    padding: 20px;
+    margin-top: 1em;
     background: $blackWashy;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2em;
+    color: $greyLight;
+    transition: background 0.5s ease;
+
+    h2 {
+      border-bottom: 1px solid darken($greyLight, 10%);
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+      color: $white;
+      font-size: 1.6em;
+      transition: color 0.5s ease;
+
+      &:hover {
+        color: $btn;
+      }
+    }
 
     .title {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
-
-      h2 {
-        color: $white;
-        font-size: 24px;
-      }
 
       button {
-        border: none;
-        margin-left: 20px;
-        cursor: pointer;
+        padding: 0.5em 1em;
         background: $btn;
         color: $white;
-        padding: 8px 16px;
+        border: none;
         border-radius: 4px;
-        transition: background 0.2s ease;
+        cursor: pointer;
+        transition: all 0.3s;
+        transform: translateY(0);
 
         &:hover {
           background: $btnHover;
+          transform: translateY(-3px);
         }
       }
     }
 
-    .sliders-img {
+    input[type="text"],
+    input[type="number"],
+    input[type="color"] {
+      width: 100%;
+      padding: 0.5em;
+      border: 1px solid darken($greyLight, 20%);
+      background: transparent;
       color: $white;
-      display: flex;
-      flex-direction: column;
+      border-radius: 4px;
+      margin-bottom: 1em;
+      transition: all 0.3s;
+      transform: translateY(0);
 
-      .inputs {
+      &:focus {
+        border-color: $btn;
+        outline: none;
+        box-shadow: 0 0 5px $btn;
+        transform: translateY(-2px);
+      }
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+    }
+
+    .sliders-img,
+    .box-colors,
+    .courses-order,
+    .footer-text {
+      margin-bottom: 2em;
+
+      .inputs,
+      .color-input,
+      .courses-inputs,
+      .footer-inputs {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 20px;
+        gap: 1em;
+        align-items: center;
 
         p {
-          color: $greyLight;
-          margin-bottom: 4px;
-        }
-
-        input {
-          padding: 8px;
-          margin-bottom: 10px;
-          border: 1px solid $border;
-          border-radius: 4px;
-          background: darken($blackWashy, 5%);
-          color: $white;
-          width: 100%;
-          transition: border 0.2s ease;
-
-          &:hover,
-          &:focus {
-            border-color: $btnHover;
-          }
-
-          &::placeholder {
-            color: $greyLight;
-          }
+          margin: 0;
+          flex-basis: 10%;
+          text-align: right;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
         }
       }
     }
