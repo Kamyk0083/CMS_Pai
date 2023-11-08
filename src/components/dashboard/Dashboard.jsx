@@ -18,6 +18,8 @@ const Dashboard = () => {
     setFooterText,
     boxText,
     setBoxText,
+    courseText,
+    setCourseText,
   } = useContext(AppContext);
 
   const setSliderImgHanlder = (e) => {
@@ -63,6 +65,15 @@ const Dashboard = () => {
     boxText[boxNumberText] = boxNumberTextValue;
 
     setBoxText(boxText);
+  };
+
+  const setCourseTextHandler = (e) => {
+    const courseNumberText = Number(e.target.name);
+    const courseNumberTextValue = e.target.value;
+
+    courseText[courseNumberText] = courseNumberTextValue;
+
+    setCourseText(courseText);
   };
   return (
     <div className="dashboard-container">
@@ -289,6 +300,47 @@ const Dashboard = () => {
                 type="text"
                 onChange={(e) => setBoxesTextHandler(e)}
                 defaultValue={boxText[15]}
+              />
+            </div>
+          </div>
+          <div className="courses-text-text">
+            <h2>Courses texts</h2>
+            <div className="courses-text-inputs">
+              <input
+                type="text"
+                name="1"
+                onChange={(e) => setCourseTextHandler(e)}
+                defaultValue={courseText[1]}
+              />
+              <input
+                type="text"
+                name="2"
+                onChange={(e) => setCourseTextHandler(e)}
+                defaultValue={courseText[2]}
+              />
+              <input
+                type="text"
+                name="3"
+                onChange={(e) => setCourseTextHandler(e)}
+                defaultValue={courseText[3]}
+              />
+              <input
+                type="text"
+                name="4"
+                onChange={(e) => setCourseTextHandler(e)}
+                defaultValue={courseText[4]}
+              />
+              <input
+                type="text"
+                name="5"
+                onChange={(e) => setCourseTextHandler(e)}
+                defaultValue={courseText[5]}
+              />
+              <input
+                type="text"
+                name="6"
+                onChange={(e) => setCourseTextHandler(e)}
+                defaultValue={courseText[6]}
               />
             </div>
           </div>

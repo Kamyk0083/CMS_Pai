@@ -46,6 +46,15 @@ export const AppContextProvider = ({ children }) => {
     18: "Box 3 topic",
   });
 
+  const [courseText, setCourseText] = useState({
+    1: "Course 1 Topic",
+    2: "Course 2 Topic",
+    3: "Course 3 Topic",
+    4: "Course 1 Text",
+    5: "Course 2 Text",
+    6: "Course 3 Text",
+  });
+
   return (
     <AppContext.Provider
       value={{
@@ -63,6 +72,8 @@ export const AppContextProvider = ({ children }) => {
         setFooterText,
         boxText,
         setBoxText,
+        courseText,
+        setCourseText,
       }}
     >
       {children}

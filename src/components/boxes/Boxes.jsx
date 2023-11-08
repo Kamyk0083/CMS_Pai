@@ -3,8 +3,7 @@ import { AppContext } from "../../context/app.context";
 import { useContext } from "react";
 
 const Boxes = () => {
-  const { boxColor } = useContext(AppContext);
-  const { boxText } = useContext(AppContext);
+  const { boxColor, boxText } = useContext(AppContext);
 
   return (
     <div id="boxes" className="container">
