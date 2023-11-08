@@ -6,7 +6,7 @@ export const AppContextProvider = ({ children }) => {
   const [logged, setLogged] = useState(false);
   const [slider, setSlider] = useState(true);
   const [sliderImg, setSliderImg] = useState({
-    1: "/chuj.ci.w.dupe",
+    1: "/default.jpg",
     2: "/default.jpg",
     3: "/default.jpg",
   });
@@ -55,6 +55,12 @@ export const AppContextProvider = ({ children }) => {
     6: "Course 3 Text",
   });
 
+  const [sliderText, setSliderText] = useState({
+    1: "Slider 1 Text",
+    2: "Slider 2 Text",
+    3: "Slider 3 Text",
+  });
+
   return (
     <AppContext.Provider
       value={{
@@ -74,6 +80,8 @@ export const AppContextProvider = ({ children }) => {
         setBoxText,
         courseText,
         setCourseText,
+        sliderText,
+        setSliderText,
       }}
     >
       {children}

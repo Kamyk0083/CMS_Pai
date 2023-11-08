@@ -5,21 +5,21 @@ import { useContext } from "react";
 import { AppContext } from "../../context/app.context";
 
 const Slider = () => {
-  const { sliderImg } = useContext(AppContext);
+  const { sliderImg, sliderText } = useContext(AppContext);
   return (
     <div className="slider-container container">
       <Carousel>
         <div className="slide slide-1">
           <img src={sliderImg[1]} alt="" />
-          <p className="legend">Slide 1</p>
+          <p className="legend">{sliderText[1]}</p>
         </div>
         <div className="slide slide-2">
           <img src={sliderImg[2]} alt="" />
-          <p className="legend">Slide 2</p>
+          <p className="legend">{sliderText[2]}</p>
         </div>
         <div className="slide slide-3">
           <img src={sliderImg[3]} alt="" />
-          <p className="legend">Slide 3</p>
+          <p className="legend">{sliderText[3]}</p>
         </div>
       </Carousel>
     </div>

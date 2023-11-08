@@ -20,6 +20,8 @@ const Dashboard = () => {
     setBoxText,
     courseText,
     setCourseText,
+    sliderText,
+    setSliderText,
   } = useContext(AppContext);
 
   const setSliderImgHanlder = (e) => {
@@ -75,6 +77,15 @@ const Dashboard = () => {
 
     setCourseText(courseText);
   };
+
+  const setSliderTextHandler = (e) => {
+    const sliderNumberText = Number(e.target.name);
+    const sliderNumberTextValue = e.target.value;
+
+    sliderText[sliderNumberText] = sliderNumberTextValue;
+
+    setSliderText(sliderText);
+  };
   return (
     <div className="dashboard-container">
       <div className="show-home-btn">
@@ -115,6 +126,29 @@ const Dashboard = () => {
               placeholder="paste here URL to img"
             />
           </div>
+          <div className="slider-text">
+            <h2>Slider Text</h2>
+            <div className="slider-text-input">
+              <input
+                name="1"
+                type="text"
+                onChange={(e) => setSliderTextHandler(e)}
+                defaultValue={sliderText[1]}
+              />
+              <input
+                name="2"
+                type="text"
+                onChange={(e) => setSliderTextHandler(e)}
+                defaultValue={sliderText[2]}
+              />
+              <input
+                name="3"
+                type="text"
+                onChange={(e) => setSliderTextHandler(e)}
+                defaultValue={sliderText[3]}
+              />
+            </div>
+          </div>
           <div className="box-colors">
             <h2>Box colors</h2>
             <div className="color-input">
@@ -138,57 +172,6 @@ const Dashboard = () => {
                 defaultValue={boxColor[3]}
                 type="color"
                 name="3"
-              />
-            </div>
-          </div>
-          <div className="courses-order">
-            <h2>Courses Order</h2>
-            <div className="courses-inputs">
-              <p>1</p>
-              <input
-                onChange={(e) => setCourseOrderHandler(e)}
-                defaultValue={courseOrder[1]}
-                type="number"
-                min={1}
-                max={3}
-                name="1"
-              />
-              <p>2</p>
-              <input
-                onChange={(e) => setCourseOrderHandler(e)}
-                defaultValue={courseOrder[2]}
-                type="number"
-                min={1}
-                max={3}
-                name="2"
-              />
-              <p>3</p>
-              <input
-                onChange={(e) => setCourseOrderHandler(e)}
-                defaultValue={courseOrder[3]}
-                type="number"
-                min={1}
-                max={3}
-                name="3"
-              />
-            </div>
-          </div>
-          <div className="footer-text">
-            <h2>Footer text</h2>
-            <div className="footer-inputs">
-              <p>1</p>
-              <input
-                onChange={(e) => setFooterTextHandler(e)}
-                defaultValue={footerText[1]}
-                type="text"
-                name="1"
-              />
-              <p>2</p>
-              <input
-                onChange={(e) => setFooterTextHandler(e)}
-                defaultValue={footerText[2]}
-                type="text"
-                name="2"
               />
             </div>
           </div>
@@ -303,6 +286,38 @@ const Dashboard = () => {
               />
             </div>
           </div>
+          <div className="courses-order">
+            <h2>Courses Order</h2>
+            <div className="courses-inputs">
+              <p>1</p>
+              <input
+                onChange={(e) => setCourseOrderHandler(e)}
+                defaultValue={courseOrder[1]}
+                type="number"
+                min={1}
+                max={3}
+                name="1"
+              />
+              <p>2</p>
+              <input
+                onChange={(e) => setCourseOrderHandler(e)}
+                defaultValue={courseOrder[2]}
+                type="number"
+                min={1}
+                max={3}
+                name="2"
+              />
+              <p>3</p>
+              <input
+                onChange={(e) => setCourseOrderHandler(e)}
+                defaultValue={courseOrder[3]}
+                type="number"
+                min={1}
+                max={3}
+                name="3"
+              />
+            </div>
+          </div>
           <div className="courses-text-text">
             <h2>Courses texts</h2>
             <div className="courses-text-inputs">
@@ -341,6 +356,25 @@ const Dashboard = () => {
                 name="6"
                 onChange={(e) => setCourseTextHandler(e)}
                 defaultValue={courseText[6]}
+              />
+            </div>
+          </div>
+          <div className="footer-text">
+            <h2>Footer text</h2>
+            <div className="footer-inputs">
+              <p>1</p>
+              <input
+                onChange={(e) => setFooterTextHandler(e)}
+                defaultValue={footerText[1]}
+                type="text"
+                name="1"
+              />
+              <p>2</p>
+              <input
+                onChange={(e) => setFooterTextHandler(e)}
+                defaultValue={footerText[2]}
+                type="text"
+                name="2"
               />
             </div>
           </div>
