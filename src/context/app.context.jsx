@@ -6,7 +6,7 @@ export const AppContextProvider = ({ children }) => {
   const [logged, setLogged] = useState(false);
   const [slider, setSlider] = useState(true);
   const [sliderImg, setSliderImg] = useState({
-    1: "/default.jpg",
+    1: "/chuj.ci.w.dupe",
     2: "/default.jpg",
     3: "/default.jpg",
   });
@@ -25,6 +25,27 @@ export const AppContextProvider = ({ children }) => {
     2: "#Ksawery",
   });
 
+  const [boxText, setBoxText] = useState({
+    1: "Lorem Ipsum",
+    2: "Lorem Ipsum",
+    3: "Lorem Ipsum",
+    4: "Lorem Ipsum",
+    5: "Lorem Ipsum",
+    6: "Lorem Ipsum",
+    7: "Lorem Ipsum",
+    8: "Lorem Ipsum",
+    9: "Lorem Ipsum",
+    10: "Lorem Ipsum",
+    11: "Lorem Ipsum",
+    12: "Lorem Ipsum",
+    13: "Lorem Ipsum",
+    14: "Lorem Ipsum",
+    15: "Lorem Ipsum",
+    16: "Box 1 topic",
+    17: "Box 2 topic",
+    18: "Box 3 topic",
+  });
+
   return (
     <AppContext.Provider
       value={{
@@ -40,6 +61,8 @@ export const AppContextProvider = ({ children }) => {
         setCourseOrder,
         footerText,
         setFooterText,
+        boxText,
+        setBoxText,
       }}
     >
       {children}

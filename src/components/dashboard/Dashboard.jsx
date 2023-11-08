@@ -16,6 +16,8 @@ const Dashboard = () => {
     setCourseOrder,
     footerText,
     setFooterText,
+    boxText,
+    setBoxText,
   } = useContext(AppContext);
 
   const setSliderImgHanlder = (e) => {
@@ -41,7 +43,6 @@ const Dashboard = () => {
     const courseNumberValue = e.target.value;
 
     courseOrder[courseNumber] = courseNumberValue;
-    console.log(courseOrder);
 
     setCourseOrder(courseOrder);
   };
@@ -53,6 +54,15 @@ const Dashboard = () => {
     footerText[footerNumber] = footerNumberValue;
 
     setFooterText(footerText);
+  };
+
+  const setBoxesTextHandler = (e) => {
+    const boxNumberText = Number(e.target.name);
+    const boxNumberTextValue = e.target.value;
+
+    boxText[boxNumberText] = boxNumberTextValue;
+
+    setBoxText(boxText);
   };
   return (
     <div className="dashboard-container">
@@ -168,6 +178,117 @@ const Dashboard = () => {
                 defaultValue={footerText[2]}
                 type="text"
                 name="2"
+              />
+            </div>
+          </div>
+          <div className="boxes-text">
+            <h2>Boxes Texts</h2>
+            <div className="boxes-inputs">
+              <p>1</p>
+              <input
+                type="text"
+                name="16"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[16]}
+              />
+              <input
+                type="text"
+                name="1"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[1]}
+              />
+              <input
+                type="text"
+                name="2"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[2]}
+              />
+              <input
+                type="text"
+                name="3"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[3]}
+              />
+              <input
+                type="text"
+                name="4"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[4]}
+              />
+              <input
+                type="text"
+                name="5"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[5]}
+              />
+              <p>2</p>
+              <input
+                type="text"
+                name="17"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[17]}
+              />
+              <input
+                type="text"
+                name="6"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[6]}
+              />
+              <input
+                type="text"
+                name="7"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[7]}
+              />
+              <input
+                type="text"
+                name="8"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[8]}
+              />
+              <input
+                type="text"
+                name="9"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[9]}
+              />
+              <input
+                type="text"
+                name="10"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[10]}
+              />
+              <p>3</p>
+              <input
+                type="text"
+                name="18"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[18]}
+              />
+              <input
+                type="text"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[11]}
+              />
+              <input
+                type="text"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[12]}
+              />
+              <input
+                type="text"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[13]}
+              />
+              <input
+                type="text"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[14]}
+              />
+              <input
+                type="text"
+                onChange={(e) => setBoxesTextHandler(e)}
+                defaultValue={boxText[15]}
               />
             </div>
           </div>
