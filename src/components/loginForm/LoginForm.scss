@@ -1,46 +1,73 @@
-@import '../../colors.scss';
+@import "../../colors.scss";
 
 .login-form {
-    height: 100vh;
-    width: 100vw;
+  background-color: $darkPageBg;
+  color: $darkText;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: $semiDarkAccent;
+  }
+
+  form {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
 
-    h2 {
-        font-size: 18px;
+    input {
+      margin-bottom: 15px;
+      border: 2px solid $semiDarkSecondary;
+      padding: 12px 18px;
+      border-radius: 8px;
+      background-color: transparent;
+      color: $darkText;
+      transition: border-color 0.3s, box-shadow 0.3s;
+
+      &:focus {
+        border-color: $semiDarkAccent;
+        box-shadow: 0 0 10px 0 $semiDarkAccent;
+        outline: none;
+      }
+
+      &:hover {
+        border-color: lighten($semiDarkSecondary, 10%);
+      }
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
+    button {
+      border-radius: 8px;
+      background-color: $semiDarkAccent;
+      color: $white;
+      padding: 12px 18px;
+      border: none;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-bottom: 20px;
 
-        input {
-            margin-bottom: 20px;
-            border: 1px solid $border;
-            padding: 6px 10px;
-            border-radius: 6px;
-        }
-        button {
-            border-radius: 6px;
-            padding: 6px 10px;
-            border: none;
-            background: $btn;
-            color: $white;
-            cursor: pointer;
+      &:hover {
+        background-color: lighten($semiDarkAccent, 10%);
+        transform: translateY(-2px);
+      }
+    }
 
-            &:hover {
-                background: $btnHover;
-            }
-        }
+    .go-back-btn {
+      background: none;
+      border: none;
+      color: $semiDarkSecondary;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: $semiDarkBg;
+        color: $semiDarkAccent;
+      }
     }
-    .error {
-        margin-top: 10px;
-        border: 1px solid $error;
-        padding: 10px;
-        color: $error;
-        font-size: 12px;
-        text-align: center;
-    }
+  }
 }

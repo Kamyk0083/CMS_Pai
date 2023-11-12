@@ -15,11 +15,11 @@
   .logo {
     font-size: 20px;
     color: white;
-
     span {
       color: $gold;
     }
   }
+
   .menu {
     display: flex;
     list-style: none;
@@ -27,7 +27,6 @@
     .admin {
       a {
         color: $adminColor;
-
         &:hover {
           color: $adminColorHover;
         }
@@ -40,7 +39,6 @@
       text-decoration: none;
       border-top: 2px solid $black;
       border-bottom: 2px solid $black;
-
       &:hover {
         color: $gold;
         border-top: 2px solid $white;
@@ -54,13 +52,45 @@
       text-decoration: none;
       border-top: 2px solid $black;
       border-bottom: 2px solid $black;
-
       &:hover {
         cursor: pointer;
         color: $gold;
         border-top: 2px solid $white;
         border-bottom: 2px solid $white;
       }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .logo {
+      font-size: 16px;
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .menu {
+      flex-basis: 100%;
+      justify-content: center;
+      a,
+      .logout {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+    .logo {
+      font-size: 18px;
+    }
+
+    .menu a,
+    .menu .logout {
+      padding: 18px 15px;
     }
   }
 }
