@@ -12,25 +12,25 @@ const Header = () => {
   return (
     <div className="header-container container">
       <h1 className="logo">
-        #<span>KURSY</span>_online
+        #<span>PLANES</span>_online
       </h1>
       <ul className="menu">
         <li>
-          <a href="#boxes">Informacje</a>
+          <a href="#boxes">Informations</a>
         </li>
         <li>
-          <a href="#courses">Kursy</a>
+          <a href="#courses">Courses</a>
         </li>
         <li>
           {logged && (
             <a href="./" className="admin logout" onClick={logout}>
-              Wyloguj
+              Logout
             </a>
           )}
         </li>
         {!logged && (
           <li className="admin">
-            <Link to="admin">Zaloguj</Link>
+            <Link to="admin">Login</Link>
           </li>
         )}
         {logged && (
